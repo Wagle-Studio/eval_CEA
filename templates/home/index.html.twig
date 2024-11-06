@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<main class="main">
+		<section class="banner">
+			<div class="banner_title">
+				<h1>Bienvenue chez Simplon Grenoble</h1>
+				<p>La fabrique des futurs développeurs web</p>
+			</div>
+			<img src="{{ asset('logo_simplon.svg') }}" alt="Logo Simplon">
+			<a href="#" class="btn">Découvrez nos formations</a>
+		</section>
+		<section class="promotions-section">
+			<div class="promotion-card">
+				<div class="promotion-count">{{ ongoinPromotionCount }}</div>
+				<p class="promotion-text">promotions en cours</p>
+			</div>
+		</section>
+		<section class="newsletter-section">
+			<h2>Soyez informé des prochains lancement</h2>
+			<form action="/newsletter/add" method="post">
+				<label for="newsletter">Saisissez une adresse email :</label>
+				<input type="newsletter" id="newsletter" name="newsletter" placeholder="jhon.doe@gmail.com" required>
+				<button type="submit" id="newsletterSubmitButton" class="btn">S'inscrire</button>
+			</form>
+		</section>
+	</main>
+{% endblock %}
